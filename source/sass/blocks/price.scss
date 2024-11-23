@@ -1,0 +1,125 @@
+.price {
+  padding: 40px 15px;
+  background-color: $darker-background-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 61px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px;
+  }
+}
+
+.price__title {
+  @include heading-3;
+  text-align: center;
+  margin-bottom: 31px;
+  order: -2;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.price__wrapper {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #78787833;
+  margin: 0 auto 31px;
+  justify-content: space-between;
+
+
+  @media (min-width: $tablet-width) {
+    width: 310px;
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 350px;
+  }
+}
+
+.price__label {
+  order: -1;
+  margin: 0 0 -2px;
+  font-family: $secondary-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #10265480;
+
+  @media (min-width: $tablet-width) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.price__label input {
+  display: none;
+}
+
+.price__label:has(input:checked) {
+  padding-bottom: 6px;
+  border-bottom: 2px solid $tabs-color;
+  color: #102654;
+}
+
+.price__list {
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: none;
+  list-style: none;
+  gap: 36px;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    width: 380px;
+    position: relative;
+    z-index: 1;
+    gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    width: 1160px;
+    gap: 40px;
+    margin: 0 auto;
+  }
+}
+
+.price__wrapper:has(input.price-label__input--month:checked)~.price-list--month,
+.price__wrapper:has(input.price-label__input--halfyear:checked)~.price-list--halfyear,
+.price__wrapper:has(input.price-label__input--year:checked)~.price-list--year {
+  display: flex;
+}
+
+.price::after {
+
+  @media (min-width: $tablet-width) {
+    content: "";
+    display: block;
+    width: 275px;
+    height: 328px;
+    background: url(../../img/weight.png) no-repeat center/100%;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(14px) translateY(-13px) rotate(150deg);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 321px;
+    height: 384px;
+    transform: translateX(92px) translateY(-10px) rotate(150deg);
+  }
+}

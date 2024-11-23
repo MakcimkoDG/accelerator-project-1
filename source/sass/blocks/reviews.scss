@@ -1,0 +1,141 @@
+.reviews {
+  padding: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 89px 1fr 89px;
+  grid-template-rows: auto auto;
+  gap: 39px 0;
+  max-width: $tablet-width;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 59px 45px 60px;
+    gap: 35px 0;
+  }
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 104px 1fr 104px;
+    padding: 100px 0;
+  }
+}
+
+.reviews__title {
+  @include heading-3;
+  text-align: center;
+  grid-column: 1/-1;
+
+  @media (min-width: $tablet-width) {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+.reviews__button {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.reviews__button--prev {
+  grid-column: 1/2;
+  background: url("../../img/backward.svg") no-repeat left center/18px;
+}
+
+.reviews__button--next {
+  grid-column: -2/-1;
+  background: url("../../img/forward.svg") no-repeat right center/18px;
+}
+
+.reviews__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  grid-column: 1/-1;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 2/-2;
+  }
+}
+
+.reviews__list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 25px 29px;
+  background-color: $lighter-secondary-color;
+  color: $basic-light-color;
+  box-shadow: 0px 0px 40px 0px #1C337433;
+
+  @media (min-width: $tablet-width) {
+    padding: 41px 30px 40px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    place-items: start flex-start;
+    gap: 19px 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 60px;
+    gap: 20px 30px;
+  }
+}
+
+.reviews__list li:not(:first-child) {
+  display: none;
+}
+
+.reviews__list li picture {
+  width: 68px;
+  height: 68px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.reviews__list li picture img {
+  object-fit: cover;
+  width: 102%;
+  height: 102%;
+  margin-top: -1px
+}
+
+.reviews__list li h3 {
+  @include heading-6;
+  margin-bottom: 17px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 22px;
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    margin-bottom: 0;
+  }
+}
+
+.reviews__list li p {
+  @include text-medium;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    text-align: start;
+  }
+}

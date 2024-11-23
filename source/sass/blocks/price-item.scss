@@ -1,0 +1,94 @@
+.price-item {
+  background-color: $primary-background-color;
+  padding: 50px 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    padding: 65px;
+    gap: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 40px;
+    width: 360px;
+  }
+}
+
+.price-item__title {
+  @include heading-4;
+}
+
+.price-item__description {
+  @include text-medium;
+  margin-bottom: 46px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+  }
+}
+
+.price-item__price {
+  color: $secondary-color;
+  @include number-m;
+  position: relative;
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.price-item__price::before {
+  content: attr(data-content);
+  @include number-xl;
+  color: $shadow-color;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 120%;
+  height: 120px;
+  z-index: -1;
+  opacity: 48%;
+
+  @media (min-width: $tablet-width) {
+    line-height: inherit;
+  }
+}
+
+.price-item__price::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 33px;
+  background: url("../../img/rouble.svg") no-repeat center/100%;
+  margin-left: 10px;
+
+  @media (min-width: $tablet-width) {
+    width: 30px;
+    height: 42px;
+  }
+}
+
+.price-item__button {
+  padding: 25px;
+  background-color: transparent;
+  border: 2ps solid $primary-color;
+  font-family: $secondary-font;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-transform: uppercase;
+  color: $primary-color;
+  margin-top: 1px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
+}

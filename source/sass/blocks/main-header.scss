@@ -1,0 +1,22 @@
+.main-header__logo {
+  margin: 0;
+  margin-bottom: 2px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.main-header__logo img {
+  display: block;
+}
+
+.main-header__contacts {
+  @include heading-4;
+  margin-right: 1px;
+  margin-top: -2px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}

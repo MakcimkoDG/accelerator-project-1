@@ -1,0 +1,29 @@
+.footer {
+  background-color: $footer-background-color;
+  padding: 40px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px 103px;
+  }
+}
+
+.footer__wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer__logo img {
+  display: block;
+}

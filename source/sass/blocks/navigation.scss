@@ -1,0 +1,24 @@
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px 36px;
+  margin-top: 1px;
+  margin-bottom: -1px;
+
+  @media (min-width: $tablet-width) {
+    gap: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 82px;
+  }
+}
+
+.navigation__item a {
+  @include text-small;
+color: $basic-light-color;
+text-decoration: none;
+}

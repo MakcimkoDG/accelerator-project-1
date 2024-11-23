@@ -1,0 +1,198 @@
+.faq {
+  background-color: $darker-background-color;
+  padding: 71px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 61px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 103px;
+  }
+}
+
+.faq__title {
+  @include heading-3;
+  margin-bottom: 34px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 44px;
+  }
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-auto-flow: column;
+    gap: 10px 40px;
+  }
+}
+
+.faq-list__input {
+  display: none;
+}
+
+.faq-list__input:checked+.faq-list__title {
+  @include gradient-button;
+  color: $basic-light-color;
+  border: 0;
+}
+
+.faq-list__title {
+  font-family: $secondary-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 14px 23px;
+  width: 100%;
+  border: 1px solid #10265433;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 17px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: -1;
+    margin-bottom: 0;
+  }
+}
+
+.faq-list__content {
+  display: none;
+  grid-column: 1/-1;
+  padding: 0;
+  margin-top: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
+  @media (min-width: $desktop-width) {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+  }
+}
+
+.faq-list__input--center:checked~.faq-list__content--center,
+.faq-list__input--abonnement:checked~.faq-list__content--abonnement,
+.faq-list__input--services:checked~.faq-list__content--services,
+.faq-list__input--rules:checked~.faq-list__content--rules {
+  display: block;
+}
+
+.faq-list__content label {
+  display: flex;
+  @include heading-5;
+  padding: 20px 52px 0 0;
+  border-top: 1px solid #74819C;
+  position: relative;
+  min-height: 30px;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 23px 118px 0 0;
+    min-height: 65px;
+    align-items: center;
+    display: flex;
+  }
+}
+.faq-list__content br {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.faq-list__content label::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid $primary-color;
+  right: 0;
+  top: 50%;
+  transform: translateY(-9px);
+  background: url(../../img/plus.svg) no-repeat center/14px;
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+    background: url(../../img/plus.svg) no-repeat center/20px;
+  }
+}
+
+.faq-list__content label:has(input:checked)::after {
+  background: url(../../img/minus.svg) no-repeat center/14px,
+    linear-gradient($primary-color 0%, $primary-color 100%);
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    height: 40px;
+    background: url(../../img/minus.svg) no-repeat center/20px,
+      linear-gradient($primary-color 0%, $primary-color 100%);
+  }
+}
+
+.faq-list__content input {
+  display: none;
+}
+
+.faq-list__content p {
+  @include text-large;
+  padding-right: 52px;
+  max-height: 0;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    padding-right: 118px;
+    margin-bottom: 13px;
+    margin-top: 9px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 23px;
+    margin-bottom: 0;
+  }
+}
+
+.faq-list__content::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #74819C;
+}
+
+label:has(input:checked)+p {
+  max-height: 100%;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 23px;
+  }
+}
